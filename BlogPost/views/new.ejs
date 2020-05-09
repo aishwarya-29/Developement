@@ -1,0 +1,22 @@
+<%- include ("partials/header") %>
+<h1 style = "text-align: center; font-family: 'Roboto', sans-serif;">
+	 CREATE  A  NEW  POST
+</h1>
+
+<div  style = "width: 50%; margin: auto">
+	<form class="ui form" action="/blogs" method="POST">
+	  <div class="field">
+		<label>Name</label>
+		<input type="text" name="blog[name]">
+	  </div>
+	  <div class="field">
+		<label>Image URL</label>
+		<input type="text" name="blog[image]">
+	  </div>
+	  <div class="field">
+		<textarea name="blog[desc]"></textarea>
+	  </div>
+	  <button class="ui primary button" type="submit">Submit</button>
+	</form>
+</div>
+<%- include ("partials/footer") %>

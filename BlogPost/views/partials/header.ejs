@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Blogger </title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+		<style>
+			body {
+				background-image: url("https://github.com/aishaa29/Resources/blob/master/%E2%80%94Pngtree%E2%80%94business%20pure%20white%20background_359687.jpg?raw=true");
+	background-repeat: repeat-y;
+			}
+		</style>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+	</head>
+<body>
+	<div class="ui secondary pointing menu" id="navbar">
+	  <a class="item" href="/">
+		Home
+	  </a>
+	<a class="item active" href="/blogs">
+		Blogs
+	  </a>
+	  <a class="item" href="/blogs/new">
+		Add a Blog
+	  </a>
+	  <div class="right menu">
+		  <% if(currentUser) { %>
+		  	<a class="ui item" id="singup" href="#">
+			  <span> <i class="far fa-user"></i> </span>
+			  <span style="color:white"> a </span><%=currentUser.username %>
+				
+		 	</a>
+		  	<a class="ui item" id="singup" href="/logout">
+			  Logout
+		 	</a>
+		  <% } else { %>
+		  	<a class="ui item" id="login" href="/login">
+			  Login
+			</a>
+			 <a class="ui item" id="singup" href="/signup">
+				  Sign Up
+			 </a>
+		  <% } %>
+	  </div>
+	</div>

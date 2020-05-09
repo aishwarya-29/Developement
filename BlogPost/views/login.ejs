@@ -1,0 +1,19 @@
+<%- include ("partials/header") %>
+<h2 class="ui center aligned icon header">
+	  <i class="circular user circle icon"></i>
+	   LOGIN
+</h2>
+
+<div class="ui center aligned segment" style="width: 30%; margin:auto;">
+	<form class="ui form" action="/login" method="POST">
+	  <div class="field">
+		<label>Username</label>
+		<input type="text" name="username" placeholder="" required>
+	  </div>
+	  <div class="field">
+		<label>Password</label>
+		<input type="password" name="password" placeholder="" required>
+	  </div>
+	  <button class="ui primary basic button" type="submit">Login</button>
+	</form>
+</div>

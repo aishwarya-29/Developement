@@ -1,0 +1,35 @@
+<%- include ("partials/header") %>
+<head>
+	<link rel="stylesheet" type="text/css"   href="/css/blog.css">
+</head>
+<div class = "ui center aligned segment" id = "content">
+	<div class="six wide column">
+		<h2>
+			<%= blog["name"] %>
+		</h2>
+		<img src = "<%= blog["image"] %>" >
+		<p>
+			<%- blog["desc"] %>
+		</p>
+	</div>
+	<a href = "/blogs/<%= blog._id %>/edit"> 
+		<div class="ui animated positive basic button" tabindex="0">
+		  <div class="visible content">Edit</div>
+		  <div class="hidden content">
+			<i class="edit icon"></i>
+		  </div>
+		</div>
+	</a>
+	<form style="display: inline" action="/blogs/<%= blog._id %>?_method=DELETE" method = "POST">
+		<div class="ui animated negative basic button" tabindex="0">
+		  <div class="visible content">Delete</div>
+		  <div class="hidden content">
+			<i class="far fa-trash-alt"></i>
+		  </div>
+		</div>
+	</form>
+</div>
+
+
+
+<%- include ("partials/footer") %>

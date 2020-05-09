@@ -1,0 +1,20 @@
+img {
+	width: 100%;
+}
+
+#viewer {
+	width:50%;
+	margin: auto;
+}
+
+.name {
+	margin-top: 5px;
+}
+body{
+	background-image: url("https://github.com/aishaa29/Resources/blob/master/%E2%80%94Pngtree%E2%80%94business%20pure%20white%20background_359687.jpg?raw=true");
+	background-repeat: repeat-y;
+}
+
+#navbar {
+	background-color: white;
+}

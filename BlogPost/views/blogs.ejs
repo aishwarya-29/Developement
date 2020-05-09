@@ -1,0 +1,34 @@
+<%- include ("partials/header") %>
+<head>
+	<link rel="stylesheet" type="text/css"   href="/css/blogs.css">
+</head>
+<div class="ui center aligned segment" id="viewer">
+	<h2 class="ui center aligned icon header">
+	  <i class="circular users icon"></i>
+	   EXPLORE BLOGS!
+	</h2>
+	<div class="ui center aligned grid">
+		<div class="twelve wide column">
+			<% blogs.forEach(function(blog){ %>
+			<div class = "ui segment">
+				<img src = "<%= blog["image"] %>" >
+				<h2 class = "name">
+					<%= blog["name"] %>	
+				</h2>
+				<p>
+					<%= blog["desc"].substr(0,100) %>...	
+				</p>
+				<a href = "/blogs/<%= blog._id %>" > 
+					<div class="ui animated red button" tabindex="0">
+					  <div class="visible content">Read More</div>
+					  <div class="hidden content">
+						<i class="right arrow icon"></i>
+					  </div>
+					</div>
+				</a>
+			</div>
+			<% }); %>	
+	</div>
+</div>
+
+<%- include ("partials/footer") %>
