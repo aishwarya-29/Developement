@@ -1,19 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var passport = require("passport");
-var User = require('../models/user');
+var User = require('../models/users');
 
 /* GET users listing. */
 router.get("/login", function(req,res){
   console.log(req.user);
-  res.render("user/login");
+  res.render("user/login.ejs");
 });
 
 router.post("/login", passport.authenticate('local',{successRedirect: '/',
 failureRedirect: '/user/login'}), function (req, res) {});
 
 router.get("/signup", function(req,res){
-  res.render("user/signup");
+  res.render("user/signup.ejs");
 });
 
 router.post("/signup", function (req, res) {

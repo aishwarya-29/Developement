@@ -8,9 +8,8 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var mongoose = require('mongoose');
+var User = require('./models/users');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -19,18 +18,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -48,22 +39,19 @@ app.use(session({
   resave: true
 }));
 
-var mongoURI = YOUR_MONGO_URI;
-mongoose.connect(mongoURI, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-})
-.then(() => console.log('DB Connected!'))
-.catch(err => {
-console.log(err);
-});
-var conn = mongoose.connection;
-
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(bodyParsor.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(cookieParser());
+passport.serializeUser(function(user,done){
+  done(null,user.id);
+});
+passport.deserializeUser(function(id,done){
+  User.findById(id, function(err,user){
+      done(err,user);
+  })
+})
 passport.use(new LocalStrategy(
   function(username, password, done) {
       User.findOne({username:username}, function(err, user){
@@ -82,4 +70,20 @@ passport.use(new LocalStrategy(
       });
   }
 ));
+var mongoURI = "mongodb+srv://aishu:aishu@cluster0.pwgok.mongodb.net/<dbname>?retryWrites=true&w=majority";
+mongoose.connect(mongoURI, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+})
+.then(() => console.log('DB Connected!'))
+.catch(err => {
+console.log(err);
+});
+var conn = mongoose.connection;
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
 module.exports = app;
