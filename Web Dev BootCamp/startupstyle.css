@@ -1,0 +1,29 @@
+body {
+	background-image: url(startupimg.jpg);
+	background-size: cover;
+}
+
+.container {
+	color : white;
+	vertical-align: middle;
+	line-height: 400px;
+	font-family: 'Calistoga', cursive;
+	font-size: 40px;
+	text-shadow: 2px 2px #000000;
+	cursor: pointer;
+
+}
+
+.btn {
+	font-size: 20px;
+	background-color: #FF8100;
+  	border-radius: 300px;
+  	font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary:hover {
+	background-color: #FFB264;
+	border-color: #ee4b08;
+  border-width: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+body {
+	background-color: red;
+}
+body,html {
+  margin:0;
+  padding:0;
+}
+* { margin: 0; padding: 0; border: none; }
+#header {
+	text-align: center;
+	background-color: #38719D;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+#RGB {
+	font-size: 40px;
+}
+#Menu {
+	background-color: white;
+}
+
+#gameConsole {
+	display: flex;
+	flex-wrap: wrap; 
+	justify-content: center;
+	padding-top: 1%;
+	padding-bottom: 10%;
+	background-color: #212027;
+	justify-content: center;
+	padding-left: 29.4%;
+	padding-right: 22.4%;
+}
+
+.row {
+	flex: 1;
+}
+
+.boxes {
+	padding: 60px;
+	border: 20px solid #212027;
+	background-color: pink;
+}
+

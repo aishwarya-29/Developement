@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Color Game </title>
+	<link rel="stylesheet" type="text/css" href="colors.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+</head>
+<body>
+	<div class = "container" id="header"> <br> THE GREAT <br>
+		<div id="RGB" >RGB (<span id="R"> 255 </span> , <span id="G"> 255</span> , <span id="B"> 255</span>) </div>
+		GUESSING GAME
+		<br>
+		<br>
+		<div id = "Menu">
+			<button type="button" class="btn btn-outline-info" id= "newColors"> New Colors </button> 
+			<span> " ..............................................  "</span>
+			<button id = "easy"> Easy </button>
+			<button id = "hard"> Hard </button>
+		</div>
+	</div>
+
+	<div id="gameConsole" class = "flex-grid">
+		<div class ="row" id="col1">
+			<div class ="column">
+				<button id="box1" class = "boxes">
+					
+				</button>
+			</div>
+			<div class="column">
+				<button id="box2" class = "boxes">
+					
+				</button> 
+			</div>
+		</div>
+		<div class ="row" id="col2">
+			<div class ="column">
+				<button id="box3" class = "boxes">
+					
+				</button>
+			</div>
+			<div class="column">
+				<button id="box4" class = "boxes">
+					
+				</button> 
+			</div>
+		</div>
+		<div class ="row" id="col3">
+			<div class ="column">
+				<button id="box5" class="boxes">
+					
+				</button>
+			</div>
+			<div class="column">
+				<button id="box6" class="boxes">
+					
+				</button> 
+			</div>
+		</div>
+
+	</div>
+<script type="text/javascript" src = "colors.js"></script>
+</body>
+</html>

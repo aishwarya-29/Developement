@@ -1,0 +1,22 @@
+.header {
+	background-image: url(header.jpeg);
+	padding-top: 5%;
+	padding-bottom: 7%;
+	text-align: center;
+}
+
+.header h1 {
+	font-family: 'Abel', sans-serif;
+	font-size: 6em;
+}
+
+.header h4 {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.content .container {
+	padding-top: 2%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}

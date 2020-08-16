@@ -1,0 +1,48 @@
+body {
+	background-image: url("img.jpg");
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	margin: auto;
+	margin-top: 10%;
+	width: 50%;
+	background-color: white;
+	width: 30%;	
+	padding: 0px;
+}
+
+#header {
+	background-color: #812154;
+	display: inline-flex;
+	justify-content: space-between;
+}
+
+#new {
+	background-color: gray;
+}
+
+input{
+   text-align:center;
+}
+
+.deletebutton {
+  display: none;
+}
+
+.list:hover .deletebutton {
+  display: inline-block;
+  cursor: pointer;
+ }
+
+ .list {
+ 	height: 1.83rem;
+ 	cursor: pointer;
+ }
+
+#hideshow {
+	background-color: pink;
+}
